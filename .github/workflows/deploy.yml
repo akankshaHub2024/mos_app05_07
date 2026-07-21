@@ -1,0 +1,25 @@
+name: Deploy to Test Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Copy Files to Apache
+      run: |
+        rsync -av --delete \
+        $GITHUB_WORKSPACE/ \
+        /opt/lampp/htdocs/rewamp/
+
+    - name: Verify Deployment
+      run: |
+        ls -l /opt/lampp/htdocs/rewamp
