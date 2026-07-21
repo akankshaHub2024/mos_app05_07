@@ -17,12 +17,12 @@ jobs:
       - name: Show Current User
         run: whoami
 
-    - name: Copy Files to Apache
-      run: |
-        rsync -av \
-        $GITHUB_WORKSPACE/ \
-        /opt/lampp/htdocs/msdpl.com_new/
-
-    - name: Verify Deployment
-      run: |
-        ls -l /opt/lampp/htdocs/msdpl.com_new
+      - name: Copy Files to Apache
+        run: |
+          rsync -av \
+          $GITHUB_WORKSPACE/ \
+          /opt/lampp/htdocs/msdpl.com_new/
+  
+      - name: Verify Deployment
+        run: |
+          ls -l /opt/lampp/htdocs/msdpl.com_new
