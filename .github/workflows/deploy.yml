@@ -18,8 +18,8 @@ jobs:
       run: |
         rsync -av --delete \
         $GITHUB_WORKSPACE/ \
-        /opt/lampp/htdocs/rewamp/
+        /opt/lampp/htdocs/msdpl.com_new/
 
     - name: Verify Deployment
       run: |
-        ls -l /opt/lampp/htdocs/rewamp
+        ls -l /opt/lampp/htdocs/msdpl.com_new
