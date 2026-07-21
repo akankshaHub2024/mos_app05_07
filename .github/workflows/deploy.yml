@@ -16,7 +16,7 @@ jobs:
 
     - name: Copy Files to Apache
       run: |
-        
+        rsync -av \
         $GITHUB_WORKSPACE/ \
         /opt/lampp/htdocs/msdpl.com_new/
 
